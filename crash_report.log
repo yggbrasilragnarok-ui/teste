@@ -1,0 +1,51 @@
+== application crashed
+app name: Pokedash
+app version: 0.6.6
+build compiler: gcc 5.4.0 20160609
+build date: Nov 27 2018
+build type: RelWithDebInfo
+build revision: 0 (devel)
+crash date: Jan 03 2019 23:57:25
+  at rip = 0x87d099
+     rax = 0x192a
+     rbx = 0x7fffdbaee640
+     rcx = 0x7fffdbaee648
+     rdx = 0x10
+     rsi = 0x60d8388
+     rdi = 0x7fffdbaee640
+     rbp = 0x7fffdbaee580
+     rsp = 0x7fffdbaee580
+     efl = 0x10202
+
+  backtrace:
+    1: ./pokedash_linux64(stdext::shared_object_ptr<Item>::shared_object_ptr(stdext::shared_object_ptr<Item> const&)+0xf) [0x87d099]
+    2: ./pokedash_linux64(LocalPlayer::getInventoryItem(Otc::InventorySlot)+0x19) [0x87d0d5]
+    3: ./pokedash_linux64(std::function<stdext::shared_object_ptr<Item> (stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)> luabinder::make_mem_func<stdext::shared_object_ptr<Item>, LocalPlayer, Otc::InventorySlot>(stdext::shared_object_ptr<Item> (LocalPlayer::*)(Otc::InventorySlot))::{lambda(stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)#1}::operator()(stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)+0x8c) [0x88496a]
+    4: ./pokedash_linux64(std::_Function_handler<stdext::shared_object_ptr<Item> (stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&), std::function<stdext::shared_object_ptr<Item> (stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)> luabinder::make_mem_func<stdext::shared_object_ptr<Item>, LocalPlayer, Otc::InventorySlot>(stdext::shared_object_ptr<Item> (LocalPlayer::*)(Otc::InventorySlot))::{lambda(stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)#1}>::_M_invoke(std::_Any_data const&, stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)+0x20) [0x8849cb]
+    5: ./pokedash_linux64(std::function<int (LuaInterface*)> luabinder::bind_fun_specializer<stdext::shared_object_ptr<Item>, std::function<stdext::shared_object_ptr<Item> (stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)>, std::tuple<stdext::shared_object_ptr<LocalPlayer>, Otc::InventorySlot> >(std::function<stdext::shared_object_ptr<Item> (stdext::shared_object_ptr<LocalPlayer> const&, Otc::InventorySlot const&)> const&)::{lambda(LuaInterface*)#1}::operator()(LuaInterface*) const+0xb6) [0x8c0db4]
+    6: ./pokedash_linux64(LuaInterface::luaCppFunctionCallback(lua_State*)+0x71) [0x7b2839]
+    7: ./pokedash_linux64() [0x97fcc0]
+    8: ./pokedash_linux64() [0x9892c2]
+    9: ./pokedash_linux64() [0x98011d]
+    10: ./pokedash_linux64() [0x97f40b]
+    11: ./pokedash_linux64() [0x98027b]
+    12: ./pokedash_linux64(lua_pcall+0x56) [0x97d906]
+    13: ./pokedash_linux64(LuaInterface::pcall(int, int, int)+0x64) [0x7af5d8]
+    14: ./pokedash_linux64(LuaInterface::safeCall(int, int)+0xa3) [0x7b0fb5]
+    15: ./pokedash_linux64(LuaInterface::signalCall(int, int)+0x1a4) [0x7b1278]
+    16: ./pokedash_linux64(void LuaInterface::callGlobalField<>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x3d) [0x8d9525]
+    17: ./pokedash_linux64(Game::processGameStart()+0xc8) [0x8d4b36]
+    18: ./pokedash_linux64(ProtocolGame::parseEnterGame(stdext::shared_object_ptr<InputMessage> const&)+0x26) [0x9227be]
+    19: ./pokedash_linux64(ProtocolGame::parseMessage(stdext::shared_object_ptr<InputMessage> const&)+0x77f) [0x9315d3]
+    20: ./pokedash_linux64(ProtocolGame::onRecv(stdext::shared_object_ptr<InputMessage> const&)+0x132) [0x9221a6]
+    21: ./pokedash_linux64(Protocol::internalRecvData(unsigned char*, unsigned short)+0x274) [0x84ee60]
+    22: ./pokedash_linux64(std::_Function_handler<void (unsigned char*, unsigned short), std::_Bind<std::_Mem_fn<void (Protocol::*)(unsigned char*, unsigned short)> (stdext::shared_object_ptr<Protocol>, std::_Placeholder<1>, std::_Placeholder<2>)> >::_M_invoke(std::_Any_data const&, unsigned char*&&, unsigned short&&)+0x4a) [0x84f4a2]
+    23: ./pokedash_linux64(Connection::onRecv(boost::system::error_code const&, unsigned long)+0x86) [0x84098e]
+    24: ./pokedash_linux64(boost::asio::detail::read_op<boost::asio::basic_stream_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >, boost::asio::mutable_buffers_1, boost::asio::detail::transfer_all_t, std::_Bind<std::_Mem_fn<void (Connection::*)(boost::system::error_code const&, unsigned long)> (stdext::shared_object_ptr<Connection>, std::_Placeholder<1>, std::_Placeholder<2>)> >::operator()(boost::system::error_code const&, unsigned long, int)+0x329) [0x84a6a3]
+    25: ./pokedash_linux64(boost::asio::detail::reactive_socket_recv_op<boost::asio::mutable_buffers_1, boost::asio::detail::read_op<boost::asio::basic_stream_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >, boost::asio::mutable_buffers_1, boost::asio::detail::transfer_all_t, std::_Bind<std::_Mem_fn<void (Connection::*)(boost::system::error_code const&, unsigned long)> (stdext::shared_object_ptr<Connection>, std::_Placeholder<1>, std::_Placeholder<2>)> > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned long)+0xc8) [0x84a7a0]
+    26: ./pokedash_linux64(Connection::poll()+0x3e7) [0x83db3b]
+    27: ./pokedash_linux64(Application::poll()+0x9) [0x7980c5]
+    28: ./pokedash_linux64(GraphicalApplication::poll()+0x3f) [0x827289]
+    29: ./pokedash_linux64(GraphicalApplication::run()+0x15c) [0x8279ac]
+    30: ./pokedash_linux64(main+0x21a) [0x943c73]
+
